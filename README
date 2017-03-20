@@ -1,26 +1,20 @@
 ----------
-MEMSGauge
+MEMS
 ----------
-Download releases:
-http://github.com/colinbourassa/memsgauge/releases/latest
 
-Discussion group:
-https://groups.google.com/forum/#!forum/mems-diagnostics
-
-MEMSGauge is a graphical display and diagnostic tool that reads runtime data
+MEMS is a graphical display and diagnostic tool that reads runtime data
 from the ECU in the Rover Modular Engine Management System (MEMS). Currently,
 only MEMS 1.6 is supported.
 
-MEMSGauge depends on another piece of software that I wrote, librosco.
+MEMS depends on another piece of software that I wrote, rosco.
 Each of these two projects has its own GitHub repository:
 
-https://github.com/colinbourassa/memsgauge
-https://github.com/colinbourassa/librosco
+https://github.com/yeco/rosco
 
 -------
 License
 -------
-MEMSGauge is licensed under the GPL v3. See the file "LICENSE" for details.
+MEMS is licensed under the GPL v3. See the file "LICENSE" for details.
 
 ----------
 Disclaimer
@@ -33,26 +27,25 @@ Installing and running
 ----------------------
 If you're running Windows, the simplest way to get started is to download the
 Win32 binary archive. Most people will probably want to do this. The archive
-contains the MEMSGauge executable, Qt libraries, and librosco library, all of
+contains the MEMS executable, Qt libraries, and librosco library, all of
 which are required to run.
 
 If you're running Linux, you can get a Debian package (.DEB) for your system's
 architecture.
 
-It's also possible to build MEMSGauge from the code yourself. This can be done
+It's also possible to build MEMS from the code yourself. This can be done
 with Linux or Windows. In either case, you'll need CMake (version 2.8.11 or
 newer) as well as version 5.x of the Qt SDK.
 
 ------------------
 Usage and features
 ------------------
-For MEMSGauge to do anything useful, the computer on which it's running must
+For MEMS to do anything useful, the computer on which it's running must
 be connected to the serial port in the MEMS wiring harness. This requires
 building a custom cable using one of FTDI's USB-to-RS232 converters. You can
 find the details of this on either of these two pages:
 
-http://alum.wpi.edu/~colinb/rover-mems-16-diagnostic-protocol.html
-https://github.com/colinbourassa/librosco/blob/wiki/HardwareInterface.md
+https://github.com/yeco/rosco/blob/wiki/HardwareInterface.md
 
 When the USB FTDI device is connected to the PC, its driver will present it
 as a COM port if using Windows, or a /dev node if using Linux. Enter the name
@@ -67,7 +60,7 @@ data. The "Communications" lights in the upper right will show the status:
 green if everything is working and MEMS is responding to read requests, or red
 if there's a problem.
 
-To access the online help about the data displayed by MEMSGauge, open the
+To access the online help about the data displayed by MEMS, open the
 "Help" menu and select "Contents..."
 
 ---
@@ -89,9 +82,8 @@ Notes on building from source under Windows
 -------------------------------------------
 If building from source in a Windows environment, note that the default
 installation of Qt includes a dependency on the ICU internationalization
-libraries. The Win32 build of MEMSGauge that I provide was linked against
+libraries. The Win32 build of MEMS that I provide was linked against
 a customized build of Qt and does not have these dependencies. If you'd like to
 build Qt in a similar way, configure the Qt source tree with this command:
 
 configure.bat -release -opensource -no-icu -no-opengl -nomake examples -nomake tests
-
